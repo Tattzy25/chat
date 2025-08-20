@@ -1,0 +1,152 @@
+/* Root variables (light / dark) */
+:root {
+  --bg: #1e1e2e;
+  --surface: #2e2e3b;
+  --accent: #4fc3f7;
+  --text: #cfcfcf;
+  --primary-msg-bg: #29293c;
+  --secondary-msg-bg: #4c4c5e;
+  --border: rgba(255,255,255,0.1);
+}
+
+/* Basic reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+header {
+  background: var(--surface);
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+header h1 {
+  font-size: 1.25rem;
+  flex: 1 1 auto;
+}
+
+.settings {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.settings input,
+.settings select,
+.settings button {
+  background: var(--primary-msg-bg);
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+.settings button {
+  background: var(--accent);
+  color: #fff;
+  cursor: pointer;
+}
+
+.settings button:hover {
+  opacity: 0.9;
+}
+
+#chat {
+  flex: 1 1 auto;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.message {
+  max-width: 75%;
+  padding: 0.75rem 1rem;
+  border-radius: 16px;
+  line-height: 1.5;
+  word-wrap: break-word;
+  animation: fadeIn 0.25s ease-out;
+}
+
+.message.user {
+  background: var(--secondary-msg-bg);
+  align-self: flex-end;
+  border-bottom-right-radius: 0;
+}
+
+.message.bot {
+  background: var(--primary-msg-bg);
+  align-self: flex-start;
+  border-bottom-left-radius: 0;
+}
+
+.message .file {
+  margin-top: 0.5rem;
+  color: var(--accent);
+  font-size: 0.85rem;
+}
+
+footer {
+  background: var(--surface);
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border-top: 1px solid var(--border);
+}
+
+footer input[type="text"] {
+  flex: 1 1 auto;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--primary-msg-bg);
+  color: var(--text);
+}
+
+footer .file-btn {
+  cursor: pointer;
+  color: var(--accent);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+footer button#send-btn {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  padding: 0.6rem;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+footer button#send-btn:hover {
+  opacity: 0.9;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
