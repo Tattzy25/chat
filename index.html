@@ -1,49 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>🔮 Groq / OpenRouter Chat</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- External icon set -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        integrity="sha512-... (optional) ..."/>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div id="app">
 
-    <!-- Header -->
-    <header>
-      <h1>Chat with AI</h1>
-      <div class="settings">
-        <select id="provider">
-          <option value="groq">Groq</option>
-          <option value="openrouter">OpenRouter</option>
-        </select>
-        <input type="text" id="model" placeholder="e.g., llama3-70b-8192">
-        <input type="password" id="api-key" placeholder="API Key">
-        <button id="save-key">Save Key</button>
+  <head>
+    <meta charset="UTF-8">
+    <title>🔮 Groq / OpenRouter Chat</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- External icon set -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-... (optional) ..." />
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div id="app">
+      <aside id="sidebar">
+        <div class="top-sections">
+          <div class="sidebar-section">
+            <button class="collapsible" aria-expanded="true">New Chat</button>
+            <div class="content" style="display:block;">
+              <button id="new-chat-btn"><i class="fa-solid fa-plus"></i> New Chat</button>
+            </div>
+          </div>
+          <div class="sidebar-section">
+            <button class="collapsible" aria-expanded="false">Recent Chats</button>
+            <div class="content" style="display:none;">
+              <ul id="recent-chats">
+                <!-- Recent chats will be listed here -->
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="sidebar-section settings-section">
+          <button class="collapsible" aria-expanded="false">Settings</button>
+          <div class="content" style="display:none;">
+            <div class="settings">
+              <label for="provider">Provider</label>
+              <select id="provider">
+                <option value="groq">Groq</option>
+                <option value="openrouter">OpenRouter</option>
+              </select>
+              <label for="model">Model</label>
+              <input type="text" id="model" placeholder="e.g., llama3-70b-8192">
+              <label for="api-key">API Key</label>
+              <input type="password" id="api-key" placeholder="API Key">
+              <button id="save-key">Save Key</button>
+            </div>
+          </div>
+        </div>
+      </aside>
+      <div class="main-content">
+        <!-- Header -->
+        <header>
+          <h1>Chat with AI</h1>
+        </header>
+        <!-- Conversation pane -->
+        <main id="chat">
+          <!-- messages will be injected here -->
+        </main>
+        <!-- Input area -->
+        <footer>
+          <div id="image-thumbnails" class="image-thumbnails"></div>
+          <div class="input-row">
+            <input type="text" id="message-input" placeholder="Type your message…">
+            <label for="file-input" class="file-btn">
+              <i class="fa-solid fa-paperclip"></i>
+            </label>
+            <input type="file" id="file-input" accept="image/*" multiple hidden>
+            <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+          </div>
+        </footer>
       </div>
-    </header>
+    </div>
 
-    <!-- Conversation pane -->
-    <main id="chat">
-      <!-- messages will be injected here -->
-    </main>
+    <script src="script.js"></script>
+  </body>
 
-    <!-- Input area -->
-    <footer>
-      <input type="text" id="message-input" placeholder="Type your message…">
-      <label for="file-input" class="file-btn">
-        <i class="fa-solid fa-paperclip"></i>
-      </label>
-      <input type="file" id="file-input" accept="*/*" hidden>
-      <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
-    </footer>
-
-  </div>
-
-  <script src="script.js"></script>
-</body>
 </html>

@@ -1,0 +1,335 @@
+/**
+ * Responsive Design
+ * Media queries and responsive styling
+ */
+
+/* Base responsive container */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+  :root {
+    --sidebar-width: 280px;
+  }
+
+  .message {
+    max-width: 70%;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 1024px) {
+  :root {
+    --sidebar-width: 240px;
+  }
+
+  .message {
+    max-width: 80%;
+  }
+
+  header h1 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  :root {
+    --sidebar-width: 100%;
+    --space-lg: 0.75rem;
+  }
+
+  #app {
+    flex-direction: column;
+  }
+
+  #sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid var(--sidebar-border);
+    padding: var(--space-md);
+    max-width: none;
+    min-width: auto;
+  }
+
+  #sidebar.collapsed {
+    height: 60px;
+    overflow: hidden;
+  }
+
+  .main-content {
+    margin-left: 0;
+    flex: 1;
+  }
+
+  .message {
+    max-width: 85%;
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  .message-image-container {
+    max-width: 150px;
+  }
+
+  .modal-image {
+    max-width: 95%;
+    max-height: 95%;
+  }
+
+  footer {
+    padding: var(--space-md);
+  }
+
+  .thumbnails-container {
+    max-height: 80px;
+  }
+
+  .thumbnail img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .notification {
+    max-width: calc(100vw - 40px);
+    right: 20px;
+    left: 20px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  :root {
+    --space-lg: 0.5rem;
+    --space-md: 0.375rem;
+    --space-sm: 0.25rem;
+  }
+
+  body {
+    font-size: 13px;
+  }
+
+  #sidebar {
+    padding: var(--space-sm);
+  }
+
+  .sidebar-section {
+    margin-bottom: var(--space-xs);
+  }
+
+  .collapsible,
+  .collapsible-header {
+    padding: var(--space-sm) var(--space-md);
+    font-size: 0.9rem;
+  }
+
+  .sidebar-section .content,
+  .collapsible-content {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  header {
+    padding: var(--space-sm) var(--space-md);
+  }
+
+  header h1 {
+    font-size: 1rem;
+  }
+
+  .chat-messages,
+  #chat {
+    padding: var(--space-md);
+    gap: var(--space-sm);
+  }
+
+  .message {
+    max-width: 90%;
+    padding: var(--space-sm);
+    font-size: 0.9rem;
+  }
+
+  .message-header {
+    font-size: 0.8rem;
+  }
+
+  .message h3 {
+    font-size: 1rem;
+  }
+
+  .message-image-container {
+    max-width: 120px;
+  }
+
+  .message .images img,
+  .message-image {
+    max-width: 120px;
+    max-height: 120px;
+  }
+
+  footer {
+    padding: var(--space-sm);
+    gap: var(--space-sm);
+  }
+
+  footer input[type="text"],
+  #message-input,
+  .message-input {
+    font-size: 0.9rem;
+    padding: var(--space-sm);
+  }
+
+  footer button#send-btn,
+  #send-button,
+  .send-button {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+
+  .thumbnails-container {
+    max-height: 60px;
+    padding: var(--space-xs);
+  }
+
+  .thumbnail img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .notification {
+    font-size: 0.85rem;
+  }
+
+  .notification-content {
+    padding: var(--space-md);
+  }
+
+  .modal-close {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+    font-size: 1.5rem;
+  }
+
+  /* Hide some elements on mobile */
+  .copy-btn {
+    display: none;
+  }
+
+  .message-header .timestamp {
+    display: none;
+  }
+}
+
+/* Small mobile */
+@media (max-width: 360px) {
+  .message {
+    max-width: 95%;
+  }
+
+  .message-image-container {
+    max-width: 100px;
+  }
+
+  .message .images img,
+  .message-image {
+    max-width: 100px;
+    max-height: 100px;
+  }
+
+  .notification {
+    max-width: calc(100vw - 20px);
+    right: 10px;
+    left: 10px;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+  #sidebar.collapsed {
+    height: 50px;
+  }
+
+  .chat-messages,
+  #chat {
+    padding: var(--space-sm);
+  }
+
+  footer {
+    padding: var(--space-sm);
+  }
+
+  .notification {
+    top: 10px;
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+  .message .images img,
+  .message-image {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .typing-dots span {
+    animation: none;
+  }
+
+  .loading-spinner {
+    animation: none;
+  }
+
+  .message {
+    animation: none;
+  }
+
+  .notification {
+    animation: none;
+  }
+}
+
+/* Dark mode preference (already dark by default) */
+@media (prefers-color-scheme: light) {
+  /* Keep dark theme - this app is designed for dark mode */
+}
+
+/* Print styles */
+@media print {
+  #sidebar {
+    display: none;
+  }
+
+  .main-content {
+    margin-left: 0;
+  }
+
+  .notification {
+    display: none;
+  }
+
+  footer {
+    display: none;
+  }
+
+  .message {
+    max-width: 100%;
+    page-break-inside: avoid;
+  }
+
+  .copy-btn {
+    display: none;
+  }
+}

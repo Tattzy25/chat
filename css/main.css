@@ -1,0 +1,48 @@
+/**
+ * Main CSS Controller
+ * Imports all modular CSS files in the correct order
+ * This replaces the monolithic style.css file
+ */
+
+/* 1. UTILITIES - Foundation */
+@import url('./utilities/variables.css');
+@import url('./utilities/reset.css');
+
+/* 2. LAYOUT - Structure */
+@import url('./layout/main.css');
+
+/* 3. COMPONENTS - UI Elements */
+@import url('./components/sidebar.css');
+@import url('./components/messages.css');
+@import url('./components/forms.css');
+@import url('./components/notifications.css');
+@import url('./components/interactive.css');
+
+/* 4. UTILITIES - Responsive & Overrides */
+@import url('./utilities/responsive.css');
+
+/**
+ * CSS Architecture Overview:
+ * 
+ * utilities/
+ * ├── variables.css     - CSS custom properties and design tokens
+ * ├── reset.css         - Browser normalization and base styles
+ * └── responsive.css    - Media queries and responsive design
+ * 
+ * layout/
+ * └── main.css          - Application layout and containers
+ * 
+ * components/
+ * ├── sidebar.css       - Navigation sidebar styling
+ * ├── messages.css      - Chat messages and conversation UI
+ * ├── forms.css         - Input fields, buttons, and form controls
+ * ├── notifications.css - Toast notifications and alerts
+ * └── interactive.css   - Modals, animations, and interactions
+ * 
+ * This modular approach provides:
+ * - Better organization and maintainability
+ * - Easier debugging and development
+ * - Clear separation of concerns
+ * - Reusable component styles
+ * - Scalable architecture
+ */

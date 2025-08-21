@@ -1,0 +1,74 @@
+{
+  // CodeGPT extension setting (corrected)
+  "CodeGPT.apiKey": "Groq",
+  // === File and Editor Settings ===
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit"
+  },
+  // === JavaScript/HTML/CSS Settings ===
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "html.format.indentInnerHtml": true,
+  "css.validate": true,
+  // === Live Server Extension Settings ===
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.donotVerifyTags": true,
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.port": 8080,
+  "liveServer.settings.root": "/",
+  // === File Associations ===
+  "files.associations": {
+    "*.js": "javascript",
+    "*.mjs": "javascript",
+    "*.html": "html",
+    "*.css": "css"
+  },
+  // === Explorer Settings ===
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.js": "${capture}.js.map",
+    "*.html": "${capture}.css"
+  },
+  // === Git Settings ===
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  // === Emmet Settings ===
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  // === Search and File Exclusions ===
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/dist": true,
+    "**/.git": true
+  },
+  "files.exclude": {
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true
+  },
+  // === Theme and UI Settings ===
+  "workbench.colorTheme": "Default Dark+",
+  "editor.fontFamily": "'Cascadia Code', 'Fira Code', Consolas, 'Courier New', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 1.5,
+  // === Terminal Settings ===
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.shell.windows": "pwsh.exe",
+  // === Extension-Specific Settings ===
+  "prettier.tabWidth": 2,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.semi": true,
+  // === JavaScript Module Settings ===
+  "javascript.preferences.includePackageJsonAutoImports": "on",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always"
+}
