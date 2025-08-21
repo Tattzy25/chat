@@ -8,7 +8,17 @@
     <!-- External icon set -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       integrity="sha512-... (optional) ..." />
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="src/css/base/variables.css">
+    <link rel="stylesheet" href="src/css/utilities/reset.css">
+    <link rel="stylesheet" href="src/css/layout/layout.css">
+    <link rel="stylesheet" href="src/css/layout/main.css">
+    <link rel="stylesheet" href="src/css/components/forms.css">
+    <link rel="stylesheet" href="src/css/components/interactive.css">
+    <link rel="stylesheet" href="src/css/components/messages.css">
+    <link rel="stylesheet" href="src/css/components/notifications.css">
+    <link rel="stylesheet" href="src/css/components/sidebar.css">
+    <link rel="stylesheet" href="src/css/utilities/responsive.css">
+    <link rel="stylesheet" href="src/css/style.css">
   </head>
 
   <body>
@@ -52,6 +62,7 @@
         <!-- Header -->
         <header>
           <h1>Chat with AI</h1>
+          <button id="menu-toggle"><i class="fa-solid fa-bars"></i></button>
         </header>
         <!-- Conversation pane -->
         <main id="chat">
@@ -72,7 +83,12 @@
       </div>
     </div>
 
-    <script src="script.js"></script>
+            <script src="src/js/main.js" type="module" defer></script>
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            document.getElementById('sidebar').classList.toggle('collapsed');
+        });
+    </script>
   </body>
 
 </html>
